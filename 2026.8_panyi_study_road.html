@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_166816f448129c8416672ea498084280 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-textpath@1.2.3/leaflet.textpath.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_166816f448129c8416672ea498084280" ></div>
+        
+    
+<div style="
+position: fixed;
+bottom: 50px;
+right: 50px;
+width: 200px;
+background-color: white;
+border: 2px solid grey;
+z-index: 9999;
+font-size: 14px;
+padding: 10px;
+">
+
+<b>類型</b><br><br>
+
+<i style="color:red;" class="fa fa-school"></i>
+高校時代<br>
+
+<i style="color:blue;" class="fa fa-graduation-cap"></i>
+大学時代<br>
+
+<i style="color:green;" class="fa fa-plane"></i>
+学生旅行<br>
+
+<i style="color:orange;" class="fa fa-university"></i>
+学会<br>
+
+<i style="color:purple;" class="fa fa-map"></i>
+学会、巡検<br>
+
+<i style="color:brown;" class="fa fa-flask"></i>
+院生、特別研究員時代<br>
+
+</div>
+</body>
+<script>
+    
+    
+            var map_166816f448129c8416672ea498084280 = L.map(
+                "map_166816f448129c8416672ea498084280",
+                {
+                    center: [35.0, 135.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f78f230dd1b75c9d11316c21d6b021be = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f78f230dd1b75c9d11316c21d6b021be.addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            tile_layer_f78f230dd1b75c9d11316c21d6b021be.addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var marker_4f3af8412fc921975885a03b0bcc1aa2 = L.marker(
+                [28.2397, 114.9487],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_df708591c4f8a949b3888266837de20d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "school",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_05c63a525d03663157f539f360724095 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e8b21eeeea3edce945fe5ad04d096a2 = $(`<div id="html_3e8b21eeeea3edce945fe5ad04d096a2" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>上高<br>     <b>時間：</b>2014年以前<br>     <b>経度：</b>114.9487<br>     <b>緯度：</b>28.2397<br>     <b>類型：</b>高校時代<br>     </div>`)[0];
+                popup_05c63a525d03663157f539f360724095.setContent(html_3e8b21eeeea3edce945fe5ad04d096a2);
+            
+        
+
+        marker_4f3af8412fc921975885a03b0bcc1aa2.bindPopup(popup_05c63a525d03663157f539f360724095)
+        ;
+
+        
+    
+    
+            marker_4f3af8412fc921975885a03b0bcc1aa2.bindTooltip(
+                `<div>
+                     上高 | 2014年以前
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4f3af8412fc921975885a03b0bcc1aa2.setIcon(icon_df708591c4f8a949b3888266837de20d);
+            
+    
+            var marker_8b16aeaa37e4767b8820dc3a05e09d73 = L.marker(
+                [29.5883, 120.821],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_965588246f86fd96823b92f0fdbe1aaa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1cf245502285dd7e983fbc27e860d39d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e83a9115bbeca8c45e5c1b63b9c0c79a = $(`<div id="html_e83a9115bbeca8c45e5c1b63b9c0c79a" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>嵊州<br>     <b>時間：</b>2023.8<br>     <b>経度：</b>120.821<br>     <b>緯度：</b>29.5883<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_1cf245502285dd7e983fbc27e860d39d.setContent(html_e83a9115bbeca8c45e5c1b63b9c0c79a);
+            
+        
+
+        marker_8b16aeaa37e4767b8820dc3a05e09d73.bindPopup(popup_1cf245502285dd7e983fbc27e860d39d)
+        ;
+
+        
+    
+    
+            marker_8b16aeaa37e4767b8820dc3a05e09d73.bindTooltip(
+                `<div>
+                     嵊州 | 2023.8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8b16aeaa37e4767b8820dc3a05e09d73.setIcon(icon_965588246f86fd96823b92f0fdbe1aaa);
+            
+    
+            var marker_802d4a5127774d865d78c0c089e9e3c4 = L.marker(
+                [43.8171, 125.3235],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_321d8162f2a12695c5b626ace98ef7fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "graduation-cap",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aad320e3a9fa162bd074714e04cfbe33 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_38c8b3c986b664624dc75aac269413fe = $(`<div id="html_38c8b3c986b664624dc75aac269413fe" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>長春<br>     <b>時間：</b>2014.9-2018.6<br>     <b>経度：</b>125.3235<br>     <b>緯度：</b>43.8171<br>     <b>類型：</b>大学時代<br>     </div>`)[0];
+                popup_aad320e3a9fa162bd074714e04cfbe33.setContent(html_38c8b3c986b664624dc75aac269413fe);
+            
+        
+
+        marker_802d4a5127774d865d78c0c089e9e3c4.bindPopup(popup_aad320e3a9fa162bd074714e04cfbe33)
+        ;
+
+        
+    
+    
+            marker_802d4a5127774d865d78c0c089e9e3c4.bindTooltip(
+                `<div>
+                     長春 | 2014.9-2018.6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_802d4a5127774d865d78c0c089e9e3c4.setIcon(icon_321d8162f2a12695c5b626ace98ef7fc);
+            
+    
+            var marker_d815016ecb5633ac8a8e58d31402b8fc = L.marker(
+                [28.6829, 115.8582],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_ceb499ca97c5a9eba84b033a1ba63a30 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_103d3e4a3e50338b1100310e831484f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_89e3cf627f3cadd6f63782518676047d = $(`<div id="html_89e3cf627f3cadd6f63782518676047d" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>南昌<br>     <b>時間：</b>2015.1<br>     <b>経度：</b>115.8582<br>     <b>緯度：</b>28.6829<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_103d3e4a3e50338b1100310e831484f1.setContent(html_89e3cf627f3cadd6f63782518676047d);
+            
+        
+
+        marker_d815016ecb5633ac8a8e58d31402b8fc.bindPopup(popup_103d3e4a3e50338b1100310e831484f1)
+        ;
+
+        
+    
+    
+            marker_d815016ecb5633ac8a8e58d31402b8fc.bindTooltip(
+                `<div>
+                     南昌 | 2015.1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d815016ecb5633ac8a8e58d31402b8fc.setIcon(icon_ceb499ca97c5a9eba84b033a1ba63a30);
+            
+    
+            var marker_d037c716d845ad41b27ff526dc0eba60 = L.marker(
+                [42.8913, 129.5091],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_22bb841a25ebf26ede8d90f4c929527d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6d0584f9fc34882014a3aac29357e317 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dac18678310210c9be64a723de8097cf = $(`<div id="html_dac18678310210c9be64a723de8097cf" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>延辺<br>     <b>時間：</b>2017.8<br>     <b>経度：</b>129.5091<br>     <b>緯度：</b>42.8913<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_6d0584f9fc34882014a3aac29357e317.setContent(html_dac18678310210c9be64a723de8097cf);
+            
+        
+
+        marker_d037c716d845ad41b27ff526dc0eba60.bindPopup(popup_6d0584f9fc34882014a3aac29357e317)
+        ;
+
+        
+    
+    
+            marker_d037c716d845ad41b27ff526dc0eba60.bindTooltip(
+                `<div>
+                     延辺 | 2017.8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d037c716d845ad41b27ff526dc0eba60.setIcon(icon_22bb841a25ebf26ede8d90f4c929527d);
+            
+    
+            var marker_0494a3b49b0df71c09fbba8b8874fe9a = L.marker(
+                [42.058, 128.0575],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_5b60188eae4db667fad7cd78cd7ea6e5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2e39890e2fe2ae7ecabbbb248eba1d3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_836aab130fc7444a1eb70bd14dcfc775 = $(`<div id="html_836aab130fc7444a1eb70bd14dcfc775" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>長白山<br>     <b>時間：</b>2017.8<br>     <b>経度：</b>128.0575<br>     <b>緯度：</b>42.058<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_c2e39890e2fe2ae7ecabbbb248eba1d3.setContent(html_836aab130fc7444a1eb70bd14dcfc775);
+            
+        
+
+        marker_0494a3b49b0df71c09fbba8b8874fe9a.bindPopup(popup_c2e39890e2fe2ae7ecabbbb248eba1d3)
+        ;
+
+        
+    
+    
+            marker_0494a3b49b0df71c09fbba8b8874fe9a.bindTooltip(
+                `<div>
+                     長白山 | 2017.8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0494a3b49b0df71c09fbba8b8874fe9a.setIcon(icon_5b60188eae4db667fad7cd78cd7ea6e5);
+            
+    
+            var marker_692b6b7fd71dcb09f6216cb54e761cbb = L.marker(
+                [45.8038, 126.5349],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_d264f7824af44d1683fd0fd9eef01a81 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bf012416f4b112bbf753134a0189c9d2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e1fcecd5107912eb4dd5b77c32c517c6 = $(`<div id="html_e1fcecd5107912eb4dd5b77c32c517c6" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>ハルビン<br>     <b>時間：</b>2017.12<br>     <b>経度：</b>126.5349<br>     <b>緯度：</b>45.8038<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_bf012416f4b112bbf753134a0189c9d2.setContent(html_e1fcecd5107912eb4dd5b77c32c517c6);
+            
+        
+
+        marker_692b6b7fd71dcb09f6216cb54e761cbb.bindPopup(popup_bf012416f4b112bbf753134a0189c9d2)
+        ;
+
+        
+    
+    
+            marker_692b6b7fd71dcb09f6216cb54e761cbb.bindTooltip(
+                `<div>
+                     ハルビン | 2017.12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_692b6b7fd71dcb09f6216cb54e761cbb.setIcon(icon_d264f7824af44d1683fd0fd9eef01a81);
+            
+    
+            var marker_7c8dd90829556930d14c830275bcd03d = L.marker(
+                [39.9354, 119.6005],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_8bf291bedd867014c1a113728a293c72 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_811e7e56befdb8f1acd8ded65781017c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3a3a65564a608ce84c686262ed6abe9e = $(`<div id="html_3a3a65564a608ce84c686262ed6abe9e" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>秦皇島<br>     <b>時間：</b>2017.4<br>     <b>経度：</b>119.6005<br>     <b>緯度：</b>39.9354<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_811e7e56befdb8f1acd8ded65781017c.setContent(html_3a3a65564a608ce84c686262ed6abe9e);
+            
+        
+
+        marker_7c8dd90829556930d14c830275bcd03d.bindPopup(popup_811e7e56befdb8f1acd8ded65781017c)
+        ;
+
+        
+    
+    
+            marker_7c8dd90829556930d14c830275bcd03d.bindTooltip(
+                `<div>
+                     秦皇島 | 2017.4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7c8dd90829556930d14c830275bcd03d.setIcon(icon_8bf291bedd867014c1a113728a293c72);
+            
+    
+            var marker_8c6f3956769f556b407a228934f99a4b = L.marker(
+                [38.914, 121.6147],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_564cebd605dd21d05f5fc346e831805e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c64a69f50d51be384dc3592e93f372f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e15e319aaa4db359a78360a4f55aa9d8 = $(`<div id="html_e15e319aaa4db359a78360a4f55aa9d8" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>大連<br>     <b>時間：</b>2018.6<br>     <b>経度：</b>121.6147<br>     <b>緯度：</b>38.914<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_c64a69f50d51be384dc3592e93f372f1.setContent(html_e15e319aaa4db359a78360a4f55aa9d8);
+            
+        
+
+        marker_8c6f3956769f556b407a228934f99a4b.bindPopup(popup_c64a69f50d51be384dc3592e93f372f1)
+        ;
+
+        
+    
+    
+            marker_8c6f3956769f556b407a228934f99a4b.bindTooltip(
+                `<div>
+                     大連 | 2018.6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8c6f3956769f556b407a228934f99a4b.setIcon(icon_564cebd605dd21d05f5fc346e831805e);
+            
+    
+            var marker_f6231fa269f7134d427c933655e6a6d2 = L.marker(
+                [39.9042, 116.4074],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_f3dcc87a93ba5756b0fc69a634043f27 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b9afa965d0759b0b4bf16641979eacd6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c767f7645118a5fcac48c361587f29d3 = $(`<div id="html_c767f7645118a5fcac48c361587f29d3" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>北京<br>     <b>時間：</b>2018.5<br>     <b>経度：</b>116.4074<br>     <b>緯度：</b>39.9042<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_b9afa965d0759b0b4bf16641979eacd6.setContent(html_c767f7645118a5fcac48c361587f29d3);
+            
+        
+
+        marker_f6231fa269f7134d427c933655e6a6d2.bindPopup(popup_b9afa965d0759b0b4bf16641979eacd6)
+        ;
+
+        
+    
+    
+            marker_f6231fa269f7134d427c933655e6a6d2.bindTooltip(
+                `<div>
+                     北京 | 2018.5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f6231fa269f7134d427c933655e6a6d2.setIcon(icon_f3dcc87a93ba5756b0fc69a634043f27);
+            
+    
+            var marker_ca7db91cb396cfb5c3593b7ba7798b38 = L.marker(
+                [30.2741, 120.1551],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_12d3ef83ca463e5aafe5e3f2bf450c01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_23eb708d0e6556b77b589dfbdd84d652 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a9288c25fe2981e1f1ddb47daf48fa16 = $(`<div id="html_a9288c25fe2981e1f1ddb47daf48fa16" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>杭州<br>     <b>時間：</b>2019.1<br>     <b>経度：</b>120.1551<br>     <b>緯度：</b>30.2741<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_23eb708d0e6556b77b589dfbdd84d652.setContent(html_a9288c25fe2981e1f1ddb47daf48fa16);
+            
+        
+
+        marker_ca7db91cb396cfb5c3593b7ba7798b38.bindPopup(popup_23eb708d0e6556b77b589dfbdd84d652)
+        ;
+
+        
+    
+    
+            marker_ca7db91cb396cfb5c3593b7ba7798b38.bindTooltip(
+                `<div>
+                     杭州 | 2019.1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ca7db91cb396cfb5c3593b7ba7798b38.setIcon(icon_12d3ef83ca463e5aafe5e3f2bf450c01);
+            
+    
+            var marker_02418736892f44df1f4ff97936bf9a67 = L.marker(
+                [30.5928, 114.3055],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_ed0b8b3c436258f7cd6ad5e30d35873d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f3b19afc3bf983ccb52d70d0f82428a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_93c9a1ee46d884f11c8029efaf217646 = $(`<div id="html_93c9a1ee46d884f11c8029efaf217646" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>武漢<br>     <b>時間：</b>2018.9<br>     <b>経度：</b>114.3055<br>     <b>緯度：</b>30.5928<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_7f3b19afc3bf983ccb52d70d0f82428a.setContent(html_93c9a1ee46d884f11c8029efaf217646);
+            
+        
+
+        marker_02418736892f44df1f4ff97936bf9a67.bindPopup(popup_7f3b19afc3bf983ccb52d70d0f82428a)
+        ;
+
+        
+    
+    
+            marker_02418736892f44df1f4ff97936bf9a67.bindTooltip(
+                `<div>
+                     武漢 | 2018.9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_02418736892f44df1f4ff97936bf9a67.setIcon(icon_ed0b8b3c436258f7cd6ad5e30d35873d);
+            
+    
+            var marker_e51b9abd8747bc4e041d9c34206a33da = L.marker(
+                [28.6564, 121.4208],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_57ca03a9ad7c4202a9640be65df456e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1674de3e6614335c4aad9e1e0f450842 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60593da04247dab501d316ffb7caaa54 = $(`<div id="html_60593da04247dab501d316ffb7caaa54" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>台州<br>     <b>時間：</b>2023.7<br>     <b>経度：</b>121.4208<br>     <b>緯度：</b>28.6564<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_1674de3e6614335c4aad9e1e0f450842.setContent(html_60593da04247dab501d316ffb7caaa54);
+            
+        
+
+        marker_e51b9abd8747bc4e041d9c34206a33da.bindPopup(popup_1674de3e6614335c4aad9e1e0f450842)
+        ;
+
+        
+    
+    
+            marker_e51b9abd8747bc4e041d9c34206a33da.bindTooltip(
+                `<div>
+                     台州 | 2023.7
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e51b9abd8747bc4e041d9c34206a33da.setIcon(icon_57ca03a9ad7c4202a9640be65df456e9);
+            
+    
+            var marker_f60ce012263b4ead52d44a20db26a427 = L.marker(
+                [30.0303, 120.5802],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_8508ab950b8014917c0952c744f1f1b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbbc3f8033cae83a302818b62ac434fc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_906df28b77027767edeaf75ba0f3a8a0 = $(`<div id="html_906df28b77027767edeaf75ba0f3a8a0" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>紹興<br>     <b>時間：</b>2025.1<br>     <b>経度：</b>120.5802<br>     <b>緯度：</b>30.0303<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_dbbc3f8033cae83a302818b62ac434fc.setContent(html_906df28b77027767edeaf75ba0f3a8a0);
+            
+        
+
+        marker_f60ce012263b4ead52d44a20db26a427.bindPopup(popup_dbbc3f8033cae83a302818b62ac434fc)
+        ;
+
+        
+    
+    
+            marker_f60ce012263b4ead52d44a20db26a427.bindTooltip(
+                `<div>
+                     紹興 | 2025.1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f60ce012263b4ead52d44a20db26a427.setIcon(icon_8508ab950b8014917c0952c744f1f1b5);
+            
+    
+            var marker_a1421aa101fafcf29ef44b3a48c855f0 = L.marker(
+                [35.6762, 139.6503],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_7c722ca1ffd330b8dc2e78b7190a8350 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ef954f3bcb75d4871066911c26c44186 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_70d34809d9fd4cbef963e7cb98cc7648 = $(`<div id="html_70d34809d9fd4cbef963e7cb98cc7648" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>東京<br>     <b>時間：</b>2024.3,2025.3,2026.3<br>     <b>経度：</b>139.6503<br>     <b>緯度：</b>35.6762<br>     <b>類型：</b>学会<br>     </div>`)[0];
+                popup_ef954f3bcb75d4871066911c26c44186.setContent(html_70d34809d9fd4cbef963e7cb98cc7648);
+            
+        
+
+        marker_a1421aa101fafcf29ef44b3a48c855f0.bindPopup(popup_ef954f3bcb75d4871066911c26c44186)
+        ;
+
+        
+    
+    
+            marker_a1421aa101fafcf29ef44b3a48c855f0.bindTooltip(
+                `<div>
+                     東京 | 2024.3,2025.3,2026.3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a1421aa101fafcf29ef44b3a48c855f0.setIcon(icon_7c722ca1ffd330b8dc2e78b7190a8350);
+            
+    
+            var marker_5fde91ad044f60f81e87ef8328634184 = L.marker(
+                [40.8222, 140.7474],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_197a61521f2561747f4954ab911c5576 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e9f389a2408496ec551cc1e4cad0e7e4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50ca03df5e77d041f3e581963da2b287 = $(`<div id="html_50ca03df5e77d041f3e581963da2b287" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>青森<br>     <b>時間：</b>2025.9<br>     <b>経度：</b>140.7474<br>     <b>緯度：</b>40.8222<br>     <b>類型：</b>学会<br>     </div>`)[0];
+                popup_e9f389a2408496ec551cc1e4cad0e7e4.setContent(html_50ca03df5e77d041f3e581963da2b287);
+            
+        
+
+        marker_5fde91ad044f60f81e87ef8328634184.bindPopup(popup_e9f389a2408496ec551cc1e4cad0e7e4)
+        ;
+
+        
+    
+    
+            marker_5fde91ad044f60f81e87ef8328634184.bindTooltip(
+                `<div>
+                     青森 | 2025.9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5fde91ad044f60f81e87ef8328634184.setIcon(icon_197a61521f2561747f4954ab911c5576);
+            
+    
+            var marker_dfe48979d95c7e84402d86da5488f4d1 = L.marker(
+                [38.2682, 140.8694],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_1fbf7197f518712c9755eeee5f61db1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8c322ad6ce8cdef8a5cc05c0a76add55 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b5b54c7ed01f9bfdba3d3bf1e97a8e3e = $(`<div id="html_b5b54c7ed01f9bfdba3d3bf1e97a8e3e" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>仙台<br>     <b>時間：</b>2025.9<br>     <b>経度：</b>140.8694<br>     <b>緯度：</b>38.2682<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_8c322ad6ce8cdef8a5cc05c0a76add55.setContent(html_b5b54c7ed01f9bfdba3d3bf1e97a8e3e);
+            
+        
+
+        marker_dfe48979d95c7e84402d86da5488f4d1.bindPopup(popup_8c322ad6ce8cdef8a5cc05c0a76add55)
+        ;
+
+        
+    
+    
+            marker_dfe48979d95c7e84402d86da5488f4d1.bindTooltip(
+                `<div>
+                     仙台 | 2025.9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dfe48979d95c7e84402d86da5488f4d1.setIcon(icon_1fbf7197f518712c9755eeee5f61db1d);
+            
+    
+            var marker_f7831379875fd0e59f8c4940fd5e17a6 = L.marker(
+                [36.6953, 137.2113],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_3005fc2246cdd6afa4d87d41a52da190 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16bdd6b811125317dfdfaac28a6344c4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_39620154a2b651d3b57d3d301c5f579e = $(`<div id="html_39620154a2b651d3b57d3d301c5f579e" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>富山<br>     <b>時間：</b>2025.11<br>     <b>経度：</b>137.2113<br>     <b>緯度：</b>36.6953<br>     <b>類型：</b>学会<br>     </div>`)[0];
+                popup_16bdd6b811125317dfdfaac28a6344c4.setContent(html_39620154a2b651d3b57d3d301c5f579e);
+            
+        
+
+        marker_f7831379875fd0e59f8c4940fd5e17a6.bindPopup(popup_16bdd6b811125317dfdfaac28a6344c4)
+        ;
+
+        
+    
+    
+            marker_f7831379875fd0e59f8c4940fd5e17a6.bindTooltip(
+                `<div>
+                     富山 | 2025.11
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f7831379875fd0e59f8c4940fd5e17a6.setIcon(icon_3005fc2246cdd6afa4d87d41a52da190);
+            
+    
+            var marker_c08d52c2c57c6588731ffdca0daad4ca = L.marker(
+                [26.2124, 127.6809],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_4aff5c6ddc83e93d9732073327ccb7f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1b51c0d4a15bcf71b10202515471e721 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60a5d5d920e6d431854a928dfa375d2d = $(`<div id="html_60a5d5d920e6d431854a928dfa375d2d" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>沖縄<br>     <b>時間：</b>2026.3<br>     <b>経度：</b>127.6809<br>     <b>緯度：</b>26.2124<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_1b51c0d4a15bcf71b10202515471e721.setContent(html_60a5d5d920e6d431854a928dfa375d2d);
+            
+        
+
+        marker_c08d52c2c57c6588731ffdca0daad4ca.bindPopup(popup_1b51c0d4a15bcf71b10202515471e721)
+        ;
+
+        
+    
+    
+            marker_c08d52c2c57c6588731ffdca0daad4ca.bindTooltip(
+                `<div>
+                     沖縄 | 2026.3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c08d52c2c57c6588731ffdca0daad4ca.setIcon(icon_4aff5c6ddc83e93d9732073327ccb7f1);
+            
+    
+            var marker_28de01690ce7b16e9b2f2272048951e3 = L.marker(
+                [36.0835, 140.0766],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_66a83d4c15f55dece62382580bfac385 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "brown",
+  "iconColor": "white",
+  "icon": "flask",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a207495d4970b6dc98953d580ba696e5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0842fa5d9ff0608f31005bc667728d63 = $(`<div id="html_0842fa5d9ff0608f31005bc667728d63" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>つくば<br>     <b>時間：</b>2019.4-2026.8<br>     <b>経度：</b>140.0766<br>     <b>緯度：</b>36.0835<br>     <b>類型：</b>院生、特別研究員時代<br>     </div>`)[0];
+                popup_a207495d4970b6dc98953d580ba696e5.setContent(html_0842fa5d9ff0608f31005bc667728d63);
+            
+        
+
+        marker_28de01690ce7b16e9b2f2272048951e3.bindPopup(popup_a207495d4970b6dc98953d580ba696e5)
+        ;
+
+        
+    
+    
+            marker_28de01690ce7b16e9b2f2272048951e3.bindTooltip(
+                `<div>
+                     つくば | 2019.4-2026.8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_28de01690ce7b16e9b2f2272048951e3.setIcon(icon_66a83d4c15f55dece62382580bfac385);
+            
+    
+            var marker_bde4fe120b45ad596bef18706aa74aaf = L.marker(
+                [36.4019, 138.2491],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_ad66782522facc76e23f146f8453b3d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "map",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c9ab748483047ab0c0210b0d8f43b64b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_00321c4634c4bf72aa1e50f4bd126f00 = $(`<div id="html_00321c4634c4bf72aa1e50f4bd126f00" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>信州、上田<br>     <b>時間：</b>2020.1<br>     <b>経度：</b>138.2491<br>     <b>緯度：</b>36.4019<br>     <b>類型：</b>学会、巡検<br>     </div>`)[0];
+                popup_c9ab748483047ab0c0210b0d8f43b64b.setContent(html_00321c4634c4bf72aa1e50f4bd126f00);
+            
+        
+
+        marker_bde4fe120b45ad596bef18706aa74aaf.bindPopup(popup_c9ab748483047ab0c0210b0d8f43b64b)
+        ;
+
+        
+    
+    
+            marker_bde4fe120b45ad596bef18706aa74aaf.bindTooltip(
+                `<div>
+                     信州、上田 | 2020.1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bde4fe120b45ad596bef18706aa74aaf.setIcon(icon_ad66782522facc76e23f146f8453b3d3);
+            
+    
+            var marker_edf170bb2af0e46e68dd0fc534d76fd7 = L.marker(
+                [35.0116, 135.7681],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_1a6440735ed6804c705e27440fbdc82b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a2889f22622c433aafa2703fd36cb406 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bac98451c0496dcc58e7915e6fca3b76 = $(`<div id="html_bac98451c0496dcc58e7915e6fca3b76" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>京都<br>     <b>時間：</b>2023.9<br>     <b>経度：</b>135.7681<br>     <b>緯度：</b>35.0116<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_a2889f22622c433aafa2703fd36cb406.setContent(html_bac98451c0496dcc58e7915e6fca3b76);
+            
+        
+
+        marker_edf170bb2af0e46e68dd0fc534d76fd7.bindPopup(popup_a2889f22622c433aafa2703fd36cb406)
+        ;
+
+        
+    
+    
+            marker_edf170bb2af0e46e68dd0fc534d76fd7.bindTooltip(
+                `<div>
+                     京都 | 2023.9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_edf170bb2af0e46e68dd0fc534d76fd7.setIcon(icon_1a6440735ed6804c705e27440fbdc82b);
+            
+    
+            var marker_5f1d500cd90ad86d1c384d9d2d1a7763 = L.marker(
+                [34.6937, 135.5023],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_a3a4f8d06b3c99e9e6c0f60d9509558c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0091b545077ed08d5eb6d51c229b0b1c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c2966b2a46479d3378a0f793e1b1d6f1 = $(`<div id="html_c2966b2a46479d3378a0f793e1b1d6f1" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>大阪<br>     <b>時間：</b>2023.9<br>     <b>経度：</b>135.5023<br>     <b>緯度：</b>34.6937<br>     <b>類型：</b>学会<br>     </div>`)[0];
+                popup_0091b545077ed08d5eb6d51c229b0b1c.setContent(html_c2966b2a46479d3378a0f793e1b1d6f1);
+            
+        
+
+        marker_5f1d500cd90ad86d1c384d9d2d1a7763.bindPopup(popup_0091b545077ed08d5eb6d51c229b0b1c)
+        ;
+
+        
+    
+    
+            marker_5f1d500cd90ad86d1c384d9d2d1a7763.bindTooltip(
+                `<div>
+                     大阪 | 2023.9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5f1d500cd90ad86d1c384d9d2d1a7763.setIcon(icon_a3a4f8d06b3c99e9e6c0f60d9509558c);
+            
+    
+            var marker_cd46084fb95ed1aab465b6706d771b41 = L.marker(
+                [34.6851, 135.8048],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_1a33019fd108080879064422e68e841d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5b7ed0dc1b5ad4b73e2a78b4b145381d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ab47c76d04aeb92efbb3e2a9852fcbed = $(`<div id="html_ab47c76d04aeb92efbb3e2a9852fcbed" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>奈良<br>     <b>時間：</b>2023.9<br>     <b>経度：</b>135.8048<br>     <b>緯度：</b>34.6851<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_5b7ed0dc1b5ad4b73e2a78b4b145381d.setContent(html_ab47c76d04aeb92efbb3e2a9852fcbed);
+            
+        
+
+        marker_cd46084fb95ed1aab465b6706d771b41.bindPopup(popup_5b7ed0dc1b5ad4b73e2a78b4b145381d)
+        ;
+
+        
+    
+    
+            marker_cd46084fb95ed1aab465b6706d771b41.bindTooltip(
+                `<div>
+                     奈良 | 2023.9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cd46084fb95ed1aab465b6706d771b41.setIcon(icon_1a33019fd108080879064422e68e841d);
+            
+    
+            var marker_6c02c9b9f09c13bdcfbbf7b96e122351 = L.marker(
+                [35.4437, 139.638],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_97cb9f9f5c604de5788d53c71900d108 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ecb5b1565b99a688ce51d51513a39d64 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d07430694ee52628480f2ccc97de4d5a = $(`<div id="html_d07430694ee52628480f2ccc97de4d5a" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>横浜<br>     <b>時間：</b>2025.12<br>     <b>経度：</b>139.638<br>     <b>緯度：</b>35.4437<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_ecb5b1565b99a688ce51d51513a39d64.setContent(html_d07430694ee52628480f2ccc97de4d5a);
+            
+        
+
+        marker_6c02c9b9f09c13bdcfbbf7b96e122351.bindPopup(popup_ecb5b1565b99a688ce51d51513a39d64)
+        ;
+
+        
+    
+    
+            marker_6c02c9b9f09c13bdcfbbf7b96e122351.bindTooltip(
+                `<div>
+                     横浜 | 2025.12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6c02c9b9f09c13bdcfbbf7b96e122351.setIcon(icon_97cb9f9f5c604de5788d53c71900d108);
+            
+    
+            var marker_cb67b45d92e7c2604759007d07289ca0 = L.marker(
+                [31.2304, 121.4737],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_83fe9a7b3160ce701fae859812b28890 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3c3e2f841bd5684f2c5a0953682df4e4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5dd55b63a8fa66ce21187a6186f47dd4 = $(`<div id="html_5dd55b63a8fa66ce21187a6186f47dd4" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>上海<br>     <b>時間：</b>2025.1<br>     <b>経度：</b>121.4737<br>     <b>緯度：</b>31.2304<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_3c3e2f841bd5684f2c5a0953682df4e4.setContent(html_5dd55b63a8fa66ce21187a6186f47dd4);
+            
+        
+
+        marker_cb67b45d92e7c2604759007d07289ca0.bindPopup(popup_3c3e2f841bd5684f2c5a0953682df4e4)
+        ;
+
+        
+    
+    
+            marker_cb67b45d92e7c2604759007d07289ca0.bindTooltip(
+                `<div>
+                     上海 | 2025.1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cb67b45d92e7c2604759007d07289ca0.setIcon(icon_83fe9a7b3160ce701fae859812b28890);
+            
+    
+            var marker_c8ad49797a78ed08798b91be0257e77a = L.marker(
+                [35.1815, 136.9066],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_929118e03bc98b3b137913f8230db91d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bd7d55e5e4c1bb9d5380bbe9eb7bf996 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_630d3d0d0c74a8551767af02acc4b5cd = $(`<div id="html_630d3d0d0c74a8551767af02acc4b5cd" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>名古屋<br>     <b>時間：</b>2024.9<br>     <b>経度：</b>136.9066<br>     <b>緯度：</b>35.1815<br>     <b>類型：</b>学会<br>     </div>`)[0];
+                popup_bd7d55e5e4c1bb9d5380bbe9eb7bf996.setContent(html_630d3d0d0c74a8551767af02acc4b5cd);
+            
+        
+
+        marker_c8ad49797a78ed08798b91be0257e77a.bindPopup(popup_bd7d55e5e4c1bb9d5380bbe9eb7bf996)
+        ;
+
+        
+    
+    
+            marker_c8ad49797a78ed08798b91be0257e77a.bindTooltip(
+                `<div>
+                     名古屋 | 2024.9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c8ad49797a78ed08798b91be0257e77a.setIcon(icon_929118e03bc98b3b137913f8230db91d);
+            
+    
+            var marker_1cb90e9242b8712a0b7cc15aeda6a584 = L.marker(
+                [35.0167, 135.8833],
+                {
+}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            var icon_8aa44aa5449e59d49f913fc1de660321 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae0843a51e9b96e09ec7cc99ebc2e177 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1e1cd3b2d26238c2cdd31387678aac04 = $(`<div id="html_1e1cd3b2d26238c2cdd31387678aac04" style="width: 100.0%; height: 100.0%;">     <b>場所：</b>滋賀、琵琶湖<br>     <b>時間：</b>2023.9<br>     <b>経度：</b>135.8833<br>     <b>緯度：</b>35.0167<br>     <b>類型：</b>学生旅行<br>     </div>`)[0];
+                popup_ae0843a51e9b96e09ec7cc99ebc2e177.setContent(html_1e1cd3b2d26238c2cdd31387678aac04);
+            
+        
+
+        marker_1cb90e9242b8712a0b7cc15aeda6a584.bindPopup(popup_ae0843a51e9b96e09ec7cc99ebc2e177)
+        ;
+
+        
+    
+    
+            marker_1cb90e9242b8712a0b7cc15aeda6a584.bindTooltip(
+                `<div>
+                     滋賀、琵琶湖 | 2023.9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1cb90e9242b8712a0b7cc15aeda6a584.setIcon(icon_8aa44aa5449e59d49f913fc1de660321);
+            
+    
+            var poly_line_5198de0e7e231fa97359469715732cbb = L.polyline(
+                [[28.6829, 115.8582], [45.8038, 126.5349]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_5198de0e7e231fa97359469715732cbb.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_dfe2a1c159c7944de8262fc1c1708750 = L.polyline(
+                [[45.8038, 126.5349], [39.9354, 119.6005]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_dfe2a1c159c7944de8262fc1c1708750.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_6b0c9f8996413cdfa558f207a21068ab = L.polyline(
+                [[39.9354, 119.6005], [42.8913, 129.5091]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_6b0c9f8996413cdfa558f207a21068ab.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_8aad2484adb9385bad86655ca8b88e11 = L.polyline(
+                [[42.8913, 129.5091], [42.058, 128.0575]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_8aad2484adb9385bad86655ca8b88e11.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_f0ab2c37720055782eb9154b35dd5c44 = L.polyline(
+                [[42.058, 128.0575], [39.9042, 116.4074]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_f0ab2c37720055782eb9154b35dd5c44.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_157e8b7397f8081fd6ec07a466a5e3ef = L.polyline(
+                [[39.9042, 116.4074], [38.914, 121.6147]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_157e8b7397f8081fd6ec07a466a5e3ef.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_56a7424dcb272c0cd7b405ce770fe303 = L.polyline(
+                [[38.914, 121.6147], [30.5928, 114.3055]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_56a7424dcb272c0cd7b405ce770fe303.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_fadbbec869d719aba4d19e71fe8d62dc = L.polyline(
+                [[30.5928, 114.3055], [30.2741, 120.1551]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_fadbbec869d719aba4d19e71fe8d62dc.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_1082b161d911a83e61b2ede5955b7814 = L.polyline(
+                [[30.2741, 120.1551], [28.6564, 121.4208]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_1082b161d911a83e61b2ede5955b7814.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_3389e6d9e224cfc85a15233146a5d8df = L.polyline(
+                [[28.6564, 121.4208], [30.0303, 120.5802]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_3389e6d9e224cfc85a15233146a5d8df.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_3777e1cf79ccdebd79a8242548de8eb4 = L.polyline(
+                [[30.0303, 120.5802], [31.2304, 121.4737]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_3777e1cf79ccdebd79a8242548de8eb4.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "green",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_07ac045072dec4f90494a4d712259169 = L.polyline(
+                [[34.6937, 135.5023], [34.6851, 135.8048]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_07ac045072dec4f90494a4d712259169.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "blue",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_41943c65888e8b52c91b182490fd155b = L.polyline(
+                [[34.6851, 135.8048], [35.0116, 135.7681]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_41943c65888e8b52c91b182490fd155b.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "blue",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_0f34163c444551ca1ee9fc419df53a7a = L.polyline(
+                [[35.0116, 135.7681], [35.6762, 139.6503]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_0f34163c444551ca1ee9fc419df53a7a.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "blue",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_8622acd8a245ac8d933230c366c95f2d = L.polyline(
+                [[35.6762, 139.6503], [35.1815, 136.9066]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_8622acd8a245ac8d933230c366c95f2d.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "blue",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_bbff5442ec88547bfef4d52fbec290e4 = L.polyline(
+                [[35.1815, 136.9066], [36.6953, 137.2113]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_bbff5442ec88547bfef4d52fbec290e4.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "blue",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_7609d126b831243b12a42702cd56f66c = L.polyline(
+                [[36.6953, 137.2113], [35.4437, 139.638]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_7609d126b831243b12a42702cd56f66c.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "blue",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_659f7ac8a29e9fa87871fe71ca4addde = L.polyline(
+                [[35.4437, 139.638], [40.8222, 140.7474]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_659f7ac8a29e9fa87871fe71ca4addde.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "blue",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_a85dba0423b9febeac1bf35d09fd0538 = L.polyline(
+                [[40.8222, 140.7474], [38.2682, 140.8694]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_a85dba0423b9febeac1bf35d09fd0538.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "blue",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+    
+            var poly_line_77ac4cd566ea30b0f9edbe2a420d7c04 = L.polyline(
+                [[38.2682, 140.8694], [26.2124, 127.6809]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_166816f448129c8416672ea498084280);
+        
+    
+            poly_line_77ac4cd566ea30b0f9edbe2a420d7c04.setText(
+                "\u27a4",
+                {
+  "repeat": false,
+  "center": false,
+  "below": false,
+  "offset": 7,
+  "orientation": 0,
+  "attributes": {
+  "fill": "blue",
+  "font-weight": "bold",
+  "font-size": "16",
+},
+}
+            );
+        
+</script>
+</html>
