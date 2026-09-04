@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6cce41061fc7979e2d7d6db608a06dbb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+
+<div style="
+position: fixed;
+bottom: 50px;
+right: 50px;
+width: 190px;
+
+background-color: white;
+
+border: 2px solid grey;
+border-radius: 5px;
+
+z-index: 9999;
+
+font-size: 14px;
+
+padding: 12px;
+
+box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+">
+
+<b style="font-size:16px;">
+災害種別
+</b>
+
+<br><br>
+
+
+<!-- 地震 -->
+
+<i
+class="fa fa-bolt"
+style="color:red;">
+</i>
+
+&nbsp; 地震
+
+<br>
+
+
+<!-- 洪水 -->
+
+<i
+class="fa fa-tint"
+style="color:blue;">
+</i>
+
+&nbsp; 洪水・土砂災害
+
+<br>
+
+
+<!-- 大雨 -->
+
+<i
+class="fa fa-cloud"
+style="color:lightblue;">
+</i>
+
+&nbsp; 大雨・洪水
+
+<br>
+
+
+<!-- 台風 -->
+
+<i
+class="fa fa-flag"
+style="color:orange;">
+</i>
+
+&nbsp; 台風・暴風雨
+
+<br>
+
+
+<!-- 森林火災 -->
+
+<i
+class="fa fa-fire"
+style="color:green;">
+</i>
+
+&nbsp; 森林火災
+
+<br>
+
+
+<!-- 火山 -->
+
+<i
+class="fa fa-fire"
+style="color:purple;">
+</i>
+
+&nbsp; 火山噴火
+
+<br>
+
+</div>
+
+    
+            <div class="folium-map" id="map_6cce41061fc7979e2d7d6db608a06dbb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6cce41061fc7979e2d7d6db608a06dbb = L.map(
+                "map_6cce41061fc7979e2d7d6db608a06dbb",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f7e55c199b76590ffd050d8ccca17dcf = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f7e55c199b76590ffd050d8ccca17dcf.addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var marker_5c7665a38870549c911514709b5a8c8a = L.marker(
+                [-33.0, -71.0],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_cc60fec983cba736343632f5c0ba4b18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9efb4fbaa24c6b8c6963bcccdb6cff86 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_05b2ec6878c71b879c86b4359cde8565 = $(`<div id="html_05b2ec6878c71b879c86b4359cde8565" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/1/17     <br>      <b>災害種別：</b>     <span style="         color:green;         font-weight:bold;     ">     森林火災     </span>     <br>      <b>国・地域：</b>     チリ     <br>      <b>被災地：</b>     チリ中部     <br>      <b>緯度：</b>     -33.0     <br>      <b>経度：</b>     -71.0     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     大規模な森林火災      </div>     </div>`)[0];
+                popup_9efb4fbaa24c6b8c6963bcccdb6cff86.setContent(html_05b2ec6878c71b879c86b4359cde8565);
+            
+        
+
+        marker_5c7665a38870549c911514709b5a8c8a.bindPopup(popup_9efb4fbaa24c6b8c6963bcccdb6cff86)
+        ;
+
+        
+    
+    
+            marker_5c7665a38870549c911514709b5a8c8a.bindTooltip(
+                `<div>
+                     2026/1/17 | 森林火災 | チリ中部
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5c7665a38870549c911514709b5a8c8a.setIcon(icon_cc60fec983cba736343632f5c0ba4b18);
+            
+    
+            var marker_8b2d8e489e903192e16157e9d821d299 = L.marker(
+                [-25.97, 32.57],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_6ba5e01ef18339e726cebc58134874e0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6f9b48ccb659993ca5e7fc8590dcfb7a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_875caa515d0620d6b396c0bd0bf34ba3 = $(`<div id="html_875caa515d0620d6b396c0bd0bf34ba3" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/1/19     <br>      <b>災害種別：</b>     <span style="         color:blue;         font-weight:bold;     ">     洪水     </span>     <br>      <b>国・地域：</b>     モザンビーク     <br>      <b>被災地：</b>     マプト     <br>      <b>緯度：</b>     -25.97     <br>      <b>経度：</b>     32.57     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     大規模洪水、住宅・インフラ被害      </div>     </div>`)[0];
+                popup_6f9b48ccb659993ca5e7fc8590dcfb7a.setContent(html_875caa515d0620d6b396c0bd0bf34ba3);
+            
+        
+
+        marker_8b2d8e489e903192e16157e9d821d299.bindPopup(popup_6f9b48ccb659993ca5e7fc8590dcfb7a)
+        ;
+
+        
+    
+    
+            marker_8b2d8e489e903192e16157e9d821d299.bindTooltip(
+                `<div>
+                     2026/1/19 | 洪水 | マプト
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8b2d8e489e903192e16157e9d821d299.setIcon(icon_6ba5e01ef18339e726cebc58134874e0);
+            
+    
+            var marker_affcc90ccd6f2fe6d8839d78d91359a5 = L.marker(
+                [-18.88, 47.51],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_cf0630a90794b1aaa4e6771df2e498f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "cloud",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b5fe6ea65c0c8e3a54c25eae3b1cc5d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_dde6cda409ca8599ca6ced145aabe246 = $(`<div id="html_dde6cda409ca8599ca6ced145aabe246" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/1/29     <br>      <b>災害種別：</b>     <span style="         color:darkpurple;         font-weight:bold;     ">     熱帯低気圧     </span>     <br>      <b>国・地域：</b>     マダガスカル     <br>      <b>被災地：</b>     アンタナナリボ     <br>      <b>緯度：</b>     -18.88     <br>      <b>経度：</b>     47.51     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     Cyclone Fytiaによる暴雨・洪水      </div>     </div>`)[0];
+                popup_9b5fe6ea65c0c8e3a54c25eae3b1cc5d.setContent(html_dde6cda409ca8599ca6ced145aabe246);
+            
+        
+
+        marker_affcc90ccd6f2fe6d8839d78d91359a5.bindPopup(popup_9b5fe6ea65c0c8e3a54c25eae3b1cc5d)
+        ;
+
+        
+    
+    
+            marker_affcc90ccd6f2fe6d8839d78d91359a5.bindTooltip(
+                `<div>
+                     2026/1/29 | 熱帯低気圧 | アンタナナリボ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_affcc90ccd6f2fe6d8839d78d91359a5.setIcon(icon_cf0630a90794b1aaa4e6771df2e498f5);
+            
+    
+            var marker_f6147f82df64a3f351b5db6e159bde1a = L.marker(
+                [-19.9, -43.9],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_0efbac421f71324f90377d596190eca1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5949e76f569958117074568de0aea9b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_30b4c4d40572ce39e03c4b9f43dad216 = $(`<div id="html_30b4c4d40572ce39e03c4b9f43dad216" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/2/3     <br>      <b>災害種別：</b>     <span style="         color:blue;         font-weight:bold;     ">     洪水     </span>     <br>      <b>国・地域：</b>     ブラジル     <br>      <b>被災地：</b>     ミナスジェライス州     <br>      <b>緯度：</b>     -19.9     <br>      <b>経度：</b>     -43.9     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     長期間の豪雨・洪水      </div>     </div>`)[0];
+                popup_d5949e76f569958117074568de0aea9b.setContent(html_30b4c4d40572ce39e03c4b9f43dad216);
+            
+        
+
+        marker_f6147f82df64a3f351b5db6e159bde1a.bindPopup(popup_d5949e76f569958117074568de0aea9b)
+        ;
+
+        
+    
+    
+            marker_f6147f82df64a3f351b5db6e159bde1a.bindTooltip(
+                `<div>
+                     2026/2/3 | 洪水 | ミナスジェライス州
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f6147f82df64a3f351b5db6e159bde1a.setIcon(icon_0efbac421f71324f90377d596190eca1);
+            
+    
+            var marker_94258e5aa5efe11da41a3fd400841a85 = L.marker(
+                [-18.9, 47.5],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_a194486ab8f0d164aa914cad9068e59d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "cloud",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_66429016f0f69ca7ff886c2ddac3c8b1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_20174a19b158c754945c6a13a86b5c48 = $(`<div id="html_20174a19b158c754945c6a13a86b5c48" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/2/6     <br>      <b>災害種別：</b>     <span style="         color:darkpurple;         font-weight:bold;     ">     熱帯低気圧     </span>     <br>      <b>国・地域：</b>     マダガスカル・モザンビーク     <br>      <b>被災地：</b>     マダガスカル東部     <br>      <b>緯度：</b>     -18.9     <br>      <b>経度：</b>     47.5     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     Cyclone Gezaniによる暴風雨・洪水      </div>     </div>`)[0];
+                popup_66429016f0f69ca7ff886c2ddac3c8b1.setContent(html_20174a19b158c754945c6a13a86b5c48);
+            
+        
+
+        marker_94258e5aa5efe11da41a3fd400841a85.bindPopup(popup_66429016f0f69ca7ff886c2ddac3c8b1)
+        ;
+
+        
+    
+    
+            marker_94258e5aa5efe11da41a3fd400841a85.bindTooltip(
+                `<div>
+                     2026/2/6 | 熱帯低気圧 | マダガスカル東部
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_94258e5aa5efe11da41a3fd400841a85.setIcon(icon_a194486ab8f0d164aa914cad9068e59d);
+            
+    
+            var marker_1e50269729eeded907156f13fe923b4b = L.marker(
+                [23.7, 90.4],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_bdfd7056b849af8673d1e4efd01d7a36 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_81ab4ac153ad7c757c322773d0b3daa4 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_cba55a46a511ab7239edc1e68f5c28ee = $(`<div id="html_cba55a46a511ab7239edc1e68f5c28ee" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/2/27     <br>      <b>災害種別：</b>     <span style="         color:red;         font-weight:bold;     ">     地震     </span>     <br>      <b>国・地域：</b>     バングラデシュ     <br>      <b>被災地：</b>     バングラデシュ中部     <br>      <b>緯度：</b>     23.7     <br>      <b>経度：</b>     90.4     <br>      <b>規模：</b>     M5.3     <br>      <b>概要：</b>     地震      </div>     </div>`)[0];
+                popup_81ab4ac153ad7c757c322773d0b3daa4.setContent(html_cba55a46a511ab7239edc1e68f5c28ee);
+            
+        
+
+        marker_1e50269729eeded907156f13fe923b4b.bindPopup(popup_81ab4ac153ad7c757c322773d0b3daa4)
+        ;
+
+        
+    
+    
+            marker_1e50269729eeded907156f13fe923b4b.bindTooltip(
+                `<div>
+                     2026/2/27 | 地震 | バングラデシュ中部
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1e50269729eeded907156f13fe923b4b.setIcon(icon_bdfd7056b849af8673d1e4efd01d7a36);
+            
+    
+            var marker_20e88c9c66b9e7541e129ae415047ca0 = L.marker(
+                [10.41, 123.13],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_475db9d82905f1a68a1dff0372ce3948 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5dcd53eea595e82a44b874423dccfb07 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_c4065f5f5adb42790ebaee53f08099b2 = $(`<div id="html_c4065f5f5adb42790ebaee53f08099b2" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/3/15     <br>      <b>災害種別：</b>     <span style="         color:purple;         font-weight:bold;     ">     火山噴火     </span>     <br>      <b>国・地域：</b>     フィリピン     <br>      <b>被災地：</b>     カンラオン火山     <br>      <b>緯度：</b>     10.41     <br>      <b>経度：</b>     123.13     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     Kanlaon火山噴火      </div>     </div>`)[0];
+                popup_5dcd53eea595e82a44b874423dccfb07.setContent(html_c4065f5f5adb42790ebaee53f08099b2);
+            
+        
+
+        marker_20e88c9c66b9e7541e129ae415047ca0.bindPopup(popup_5dcd53eea595e82a44b874423dccfb07)
+        ;
+
+        
+    
+    
+            marker_20e88c9c66b9e7541e129ae415047ca0.bindTooltip(
+                `<div>
+                     2026/3/15 | 火山噴火 | カンラオン火山
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_20e88c9c66b9e7541e129ae415047ca0.setIcon(icon_475db9d82905f1a68a1dff0372ce3948);
+            
+    
+            var marker_3e54237c51085ab21a57c6cf4d8e987c = L.marker(
+                [34.5, 69.2],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_e607d82ec4c02850405f5b3b8f794b7a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_02c31c49d1465a5e14643020dab19fca = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_02f8b00e44bdcd496a1ce6c8567f8fe4 = $(`<div id="html_02f8b00e44bdcd496a1ce6c8567f8fe4" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/3/25     <br>      <b>災害種別：</b>     <span style="         color:blue;         font-weight:bold;     ">     洪水・土砂災害     </span>     <br>      <b>国・地域：</b>     アフガニスタン     <br>      <b>被災地：</b>     アフガニスタン各地     <br>      <b>緯度：</b>     34.5     <br>      <b>経度：</b>     69.2     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     大雨・洪水・土砂災害      </div>     </div>`)[0];
+                popup_02c31c49d1465a5e14643020dab19fca.setContent(html_02f8b00e44bdcd496a1ce6c8567f8fe4);
+            
+        
+
+        marker_3e54237c51085ab21a57c6cf4d8e987c.bindPopup(popup_02c31c49d1465a5e14643020dab19fca)
+        ;
+
+        
+    
+    
+            marker_3e54237c51085ab21a57c6cf4d8e987c.bindTooltip(
+                `<div>
+                     2026/3/25 | 洪水・土砂災害 | アフガニスタン各地
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3e54237c51085ab21a57c6cf4d8e987c.setIcon(icon_e607d82ec4c02850405f5b3b8f794b7a);
+            
+    
+            var marker_d624b3f1f22bb5ab2cb37e8d801151cc = L.marker(
+                [13.44, 144.79],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_3399e43473461a6283b7c6777e89604f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_899fe366e01bfdd0b562e370d14da834 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_06d3bfe02015165da6d7e6704e1d3e38 = $(`<div id="html_06d3bfe02015165da6d7e6704e1d3e38" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/4/9     <br>      <b>災害種別：</b>     <span style="         color:orange;         font-weight:bold;     ">     台風・暴風雨     </span>     <br>      <b>国・地域：</b>     ミクロネシア・グアム     <br>      <b>被災地：</b>     グアム周辺     <br>      <b>緯度：</b>     13.44     <br>      <b>経度：</b>     144.79     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     Typhoon Sinlaku      </div>     </div>`)[0];
+                popup_899fe366e01bfdd0b562e370d14da834.setContent(html_06d3bfe02015165da6d7e6704e1d3e38);
+            
+        
+
+        marker_d624b3f1f22bb5ab2cb37e8d801151cc.bindPopup(popup_899fe366e01bfdd0b562e370d14da834)
+        ;
+
+        
+    
+    
+            marker_d624b3f1f22bb5ab2cb37e8d801151cc.bindTooltip(
+                `<div>
+                     2026/4/9 | 台風・暴風雨 | グアム周辺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d624b3f1f22bb5ab2cb37e8d801151cc.setIcon(icon_3399e43473461a6283b7c6777e89604f);
+            
+    
+            var marker_3a3a4630fff8a86a7ebf6a8a21a22f39 = L.marker(
+                [39.8, 143.2],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_6d8125550540cd8fe6e91a37aa27a792 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2c01c26757717204d530221b403cccda = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_88a3f76c633f85f47b665329953263ae = $(`<div id="html_88a3f76c633f85f47b665329953263ae" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/4/20     <br>      <b>災害種別：</b>     <span style="         color:red;         font-weight:bold;     ">     地震     </span>     <br>      <b>国・地域：</b>     日本     <br>      <b>被災地：</b>     日本近海     <br>      <b>緯度：</b>     39.8     <br>      <b>経度：</b>     143.2     <br>      <b>規模：</b>     M7.4     <br>      <b>概要：</b>     強い地震      </div>     </div>`)[0];
+                popup_2c01c26757717204d530221b403cccda.setContent(html_88a3f76c633f85f47b665329953263ae);
+            
+        
+
+        marker_3a3a4630fff8a86a7ebf6a8a21a22f39.bindPopup(popup_2c01c26757717204d530221b403cccda)
+        ;
+
+        
+    
+    
+            marker_3a3a4630fff8a86a7ebf6a8a21a22f39.bindTooltip(
+                `<div>
+                     2026/4/20 | 地震 | 日本近海
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3a3a4630fff8a86a7ebf6a8a21a22f39.setIcon(icon_6d8125550540cd8fe6e91a37aa27a792);
+            
+    
+            var marker_ea0b8cb0dace59395416e2006e7e76b0 = L.marker(
+                [26.2, 127.7],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_ce544e88f30774731c7b08f53ce3fe91 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "cloud",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_916c2fd416919b28eff180f371ade7a5 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a86e44480e76845651905f1c4f49e46c = $(`<div id="html_a86e44480e76845651905f1c4f49e46c" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/5/22     <br>      <b>災害種別：</b>     <span style="         color:lightblue;         font-weight:bold;     ">     大雨・洪水     </span>     <br>      <b>国・地域：</b>     日本     <br>      <b>被災地：</b>     沖縄県     <br>      <b>緯度：</b>     26.2     <br>      <b>経度：</b>     127.7     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     豪雨による洪水・土砂災害      </div>     </div>`)[0];
+                popup_916c2fd416919b28eff180f371ade7a5.setContent(html_a86e44480e76845651905f1c4f49e46c);
+            
+        
+
+        marker_ea0b8cb0dace59395416e2006e7e76b0.bindPopup(popup_916c2fd416919b28eff180f371ade7a5)
+        ;
+
+        
+    
+    
+            marker_ea0b8cb0dace59395416e2006e7e76b0.bindTooltip(
+                `<div>
+                     2026/5/22 | 大雨・洪水 | 沖縄県
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea0b8cb0dace59395416e2006e7e76b0.setIcon(icon_ce544e88f30774731c7b08f53ce3fe91);
+            
+    
+            var marker_57ff6ca6aaaac15b02991d335ca435d7 = L.marker(
+                [10.6, -66.9],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_5cbcc5e1bdbc2316667adaed6ff1573a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_413e50dec6ca0942f097879ea9b3a9b1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_218c4584e3b6a59d8769e6fdeea301a9 = $(`<div id="html_218c4584e3b6a59d8769e6fdeea301a9" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/6/24     <br>      <b>災害種別：</b>     <span style="         color:red;         font-weight:bold;     ">     地震     </span>     <br>      <b>国・地域：</b>     ベネズエラ     <br>      <b>被災地：</b>     ベネズエラ北部     <br>      <b>緯度：</b>     10.6     <br>      <b>経度：</b>     -66.9     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     大規模な地震活動      </div>     </div>`)[0];
+                popup_413e50dec6ca0942f097879ea9b3a9b1.setContent(html_218c4584e3b6a59d8769e6fdeea301a9);
+            
+        
+
+        marker_57ff6ca6aaaac15b02991d335ca435d7.bindPopup(popup_413e50dec6ca0942f097879ea9b3a9b1)
+        ;
+
+        
+    
+    
+            marker_57ff6ca6aaaac15b02991d335ca435d7.bindTooltip(
+                `<div>
+                     2026/6/24 | 地震 | ベネズエラ北部
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_57ff6ca6aaaac15b02991d335ca435d7.setIcon(icon_5cbcc5e1bdbc2316667adaed6ff1573a);
+            
+    
+            var marker_3e92f26057b7fcd8416f7184123b0a74 = L.marker(
+                [35.63, 140.51],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_f32bc757db274b947a916fb2396e52a3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_babad8b148dda1d9aed3291ab18ee90e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_1dc9b2ac06f16b9880d41c3999de2adc = $(`<div id="html_1dc9b2ac06f16b9880d41c3999de2adc" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/6/26     <br>      <b>災害種別：</b>     <span style="         color:red;         font-weight:bold;     ">     地震     </span>     <br>      <b>国・地域：</b>     日本     <br>      <b>被災地：</b>     千葉県東方沖     <br>      <b>緯度：</b>     35.63     <br>      <b>経度：</b>     140.51     <br>      <b>規模：</b>     M5.8     <br>      <b>概要：</b>     地震      </div>     </div>`)[0];
+                popup_babad8b148dda1d9aed3291ab18ee90e.setContent(html_1dc9b2ac06f16b9880d41c3999de2adc);
+            
+        
+
+        marker_3e92f26057b7fcd8416f7184123b0a74.bindPopup(popup_babad8b148dda1d9aed3291ab18ee90e)
+        ;
+
+        
+    
+    
+            marker_3e92f26057b7fcd8416f7184123b0a74.bindTooltip(
+                `<div>
+                     2026/6/26 | 地震 | 千葉県東方沖
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3e92f26057b7fcd8416f7184123b0a74.setIcon(icon_f32bc757db274b947a916fb2396e52a3);
+            
+    
+            var marker_58f4c66049461c6cd56f3dcc67616647 = L.marker(
+                [22.68, 109.27],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_9a658ea849d91065a041dac750f7051a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b89b5a6431d332942ad35aae2fd4e8f5 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9bff564abf49703ff51f4c382c2b9846 = $(`<div id="html_9bff564abf49703ff51f4c382c2b9846" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/7/6     <br>      <b>災害種別：</b>     <span style="         color:blue;         font-weight:bold;     ">     洪水     </span>     <br>      <b>国・地域：</b>     中国     <br>      <b>被災地：</b>     広西横州市     <br>      <b>緯度：</b>     22.68     <br>      <b>経度：</b>     109.27     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     洪水・土砂災害      </div>     </div>`)[0];
+                popup_b89b5a6431d332942ad35aae2fd4e8f5.setContent(html_9bff564abf49703ff51f4c382c2b9846);
+            
+        
+
+        marker_58f4c66049461c6cd56f3dcc67616647.bindPopup(popup_b89b5a6431d332942ad35aae2fd4e8f5)
+        ;
+
+        
+    
+    
+            marker_58f4c66049461c6cd56f3dcc67616647.bindTooltip(
+                `<div>
+                     2026/7/6 | 洪水 | 広西横州市
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_58f4c66049461c6cd56f3dcc67616647.setIcon(icon_9a658ea849d91065a041dac750f7051a);
+            
+    
+            var marker_faf79142ae7a676b32fe4b4e25c1cdeb = L.marker(
+                [36.6, 139.1],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_d0cac0922d8bea90184b348bc4a90302 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3342cac0a793a4d34b34d928a0fc9e20 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_8741f08b9e2725c629f35e2442dd2bee = $(`<div id="html_8741f08b9e2725c629f35e2442dd2bee" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/7/17     <br>      <b>災害種別：</b>     <span style="         color:blue;         font-weight:bold;     ">     洪水・土砂災害     </span>     <br>      <b>国・地域：</b>     日本     <br>      <b>被災地：</b>     群馬県・栃木県     <br>      <b>緯度：</b>     36.6     <br>      <b>経度：</b>     139.1     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     洪水・土砂災害      </div>     </div>`)[0];
+                popup_3342cac0a793a4d34b34d928a0fc9e20.setContent(html_8741f08b9e2725c629f35e2442dd2bee);
+            
+        
+
+        marker_faf79142ae7a676b32fe4b4e25c1cdeb.bindPopup(popup_3342cac0a793a4d34b34d928a0fc9e20)
+        ;
+
+        
+    
+    
+            marker_faf79142ae7a676b32fe4b4e25c1cdeb.bindTooltip(
+                `<div>
+                     2026/7/17 | 洪水・土砂災害 | 群馬県・栃木県
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_faf79142ae7a676b32fe4b4e25c1cdeb.setIcon(icon_d0cac0922d8bea90184b348bc4a90302);
+            
+    
+            var marker_099253f2fe7bb41acd0966bdb030cf1b = L.marker(
+                [36.1, 103.8],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_dffdfc67a97c595c3d2ea5fcc65a5316 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9c99b2d66e2be6b0c8acb0dcc1f8df60 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f2391b1f342df5acc4edc3f6fbe41d00 = $(`<div id="html_f2391b1f342df5acc4edc3f6fbe41d00" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/7/26     <br>      <b>災害種別：</b>     <span style="         color:blue;         font-weight:bold;     ">     洪水     </span>     <br>      <b>国・地域：</b>     中国     <br>      <b>被災地：</b>     甘粛省     <br>      <b>緯度：</b>     36.1     <br>      <b>経度：</b>     103.8     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     山間部で洪水      </div>     </div>`)[0];
+                popup_9c99b2d66e2be6b0c8acb0dcc1f8df60.setContent(html_f2391b1f342df5acc4edc3f6fbe41d00);
+            
+        
+
+        marker_099253f2fe7bb41acd0966bdb030cf1b.bindPopup(popup_9c99b2d66e2be6b0c8acb0dcc1f8df60)
+        ;
+
+        
+    
+    
+            marker_099253f2fe7bb41acd0966bdb030cf1b.bindTooltip(
+                `<div>
+                     2026/7/26 | 洪水 | 甘粛省
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_099253f2fe7bb41acd0966bdb030cf1b.setIcon(icon_dffdfc67a97c595c3d2ea5fcc65a5316);
+            
+    
+            var marker_16cb977f8f95d6f54f7c612318721a43 = L.marker(
+                [32.6817, 130.7217],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_af8c1cbde745b7817f2e87cb4d8df3b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a1ac9bd7cddf0768582004d06a112776 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a800a25602afe28945c59555900efb52 = $(`<div id="html_a800a25602afe28945c59555900efb52" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/7/28     <br>      <b>災害種別：</b>     <span style="         color:red;         font-weight:bold;     ">     地震     </span>     <br>      <b>国・地域：</b>     日本     <br>      <b>被災地：</b>     熊本県     <br>      <b>緯度：</b>     32.6817     <br>      <b>経度：</b>     130.7217     <br>      <b>規模：</b>     M6.8     <br>      <b>概要：</b>     熊本県を中心に強い揺れ      </div>     </div>`)[0];
+                popup_a1ac9bd7cddf0768582004d06a112776.setContent(html_a800a25602afe28945c59555900efb52);
+            
+        
+
+        marker_16cb977f8f95d6f54f7c612318721a43.bindPopup(popup_a1ac9bd7cddf0768582004d06a112776)
+        ;
+
+        
+    
+    
+            marker_16cb977f8f95d6f54f7c612318721a43.bindTooltip(
+                `<div>
+                     2026/7/28 | 地震 | 熊本県
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_16cb977f8f95d6f54f7c612318721a43.setIcon(icon_af8c1cbde745b7817f2e87cb4d8df3b7);
+            
+    
+            var marker_2788d7120cc2222db1f4dc848b2d8c52 = L.marker(
+                [38.2, 23.7],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_b65d66fdc3b87a306bd429ff4aef7bf1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a2555797325853bae11590812a23fa14 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_3c1dfaf9a4a07151d181dc190816b056 = $(`<div id="html_3c1dfaf9a4a07151d181dc190816b056" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/1     <br>      <b>災害種別：</b>     <span style="         color:green;         font-weight:bold;     ">     森林火災     </span>     <br>      <b>国・地域：</b>     ギリシャ     <br>      <b>被災地：</b>     ギリシャ各地     <br>      <b>緯度：</b>     38.2     <br>      <b>経度：</b>     23.7     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     大規模な森林火災      </div>     </div>`)[0];
+                popup_a2555797325853bae11590812a23fa14.setContent(html_3c1dfaf9a4a07151d181dc190816b056);
+            
+        
+
+        marker_2788d7120cc2222db1f4dc848b2d8c52.bindPopup(popup_a2555797325853bae11590812a23fa14)
+        ;
+
+        
+    
+    
+            marker_2788d7120cc2222db1f4dc848b2d8c52.bindTooltip(
+                `<div>
+                     2026/8/1 | 森林火災 | ギリシャ各地
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2788d7120cc2222db1f4dc848b2d8c52.setIcon(icon_b65d66fdc3b87a306bd429ff4aef7bf1);
+            
+    
+            var marker_d6b267ee4deef8fee5ac6970de125053 = L.marker(
+                [47.66, -117.43],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_fd5f0efcecc7003bda2a9b98f335ccd2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_819e2b01b946dc93d7bf67bc47e30812 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_eb4367eaca2c0a8709dcb5b3959d2177 = $(`<div id="html_eb4367eaca2c0a8709dcb5b3959d2177" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/3     <br>      <b>災害種別：</b>     <span style="         color:green;         font-weight:bold;     ">     森林火災     </span>     <br>      <b>国・地域：</b>     アメリカ     <br>      <b>被災地：</b>     ワシントン州・スポケーン周辺     <br>      <b>緯度：</b>     47.66     <br>      <b>経度：</b>     -117.43     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     Spokane地域で大規模森林火災、住宅・建築物に甚大な被害      </div>     </div>`)[0];
+                popup_819e2b01b946dc93d7bf67bc47e30812.setContent(html_eb4367eaca2c0a8709dcb5b3959d2177);
+            
+        
+
+        marker_d6b267ee4deef8fee5ac6970de125053.bindPopup(popup_819e2b01b946dc93d7bf67bc47e30812)
+        ;
+
+        
+    
+    
+            marker_d6b267ee4deef8fee5ac6970de125053.bindTooltip(
+                `<div>
+                     2026/8/3 | 森林火災 | ワシントン州・スポケーン周辺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d6b267ee4deef8fee5ac6970de125053.setIcon(icon_fd5f0efcecc7003bda2a9b98f335ccd2);
+            
+    
+            var marker_f8c6506084d8de5e6a198cf11adc702f = L.marker(
+                [7.05, 80.5],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_04ca3e8302ed1a059d38f5397b3c09f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_49db5215eadc0b739616e0900b03b6ef = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_37191411941103f0fcd0ffc259239062 = $(`<div id="html_37191411941103f0fcd0ffc259239062" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/4     <br>      <b>災害種別：</b>     <span style="         color:blue;         font-weight:bold;     ">     洪水・土砂災害     </span>     <br>      <b>国・地域：</b>     スリランカ     <br>      <b>被災地：</b>     中央高地周辺     <br>      <b>緯度：</b>     7.05     <br>      <b>経度：</b>     80.5     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     豪雨による洪水・土砂災害      </div>     </div>`)[0];
+                popup_49db5215eadc0b739616e0900b03b6ef.setContent(html_37191411941103f0fcd0ffc259239062);
+            
+        
+
+        marker_f8c6506084d8de5e6a198cf11adc702f.bindPopup(popup_49db5215eadc0b739616e0900b03b6ef)
+        ;
+
+        
+    
+    
+            marker_f8c6506084d8de5e6a198cf11adc702f.bindTooltip(
+                `<div>
+                     2026/8/4 | 洪水・土砂災害 | 中央高地周辺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f8c6506084d8de5e6a198cf11adc702f.setIcon(icon_04ca3e8302ed1a059d38f5397b3c09f4);
+            
+    
+            var marker_4368e5b16179c0e930cd5e0cb87f6067 = L.marker(
+                [14.47, -90.88],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_6f02659a5e26848692d470a057b8e12a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c3253d35c9a84a6003011454de02f4af = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_394da869592cf008ba612b9db25e95f6 = $(`<div id="html_394da869592cf008ba612b9db25e95f6" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/5     <br>      <b>災害種別：</b>     <span style="         color:purple;         font-weight:bold;     ">     火山噴火     </span>     <br>      <b>国・地域：</b>     グアテマラ     <br>      <b>被災地：</b>     フエゴ火山     <br>      <b>緯度：</b>     14.47     <br>      <b>経度：</b>     -90.88     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     Fuego火山の大規模な噴火活動      </div>     </div>`)[0];
+                popup_c3253d35c9a84a6003011454de02f4af.setContent(html_394da869592cf008ba612b9db25e95f6);
+            
+        
+
+        marker_4368e5b16179c0e930cd5e0cb87f6067.bindPopup(popup_c3253d35c9a84a6003011454de02f4af)
+        ;
+
+        
+    
+    
+            marker_4368e5b16179c0e930cd5e0cb87f6067.bindTooltip(
+                `<div>
+                     2026/8/5 | 火山噴火 | フエゴ火山
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4368e5b16179c0e930cd5e0cb87f6067.setIcon(icon_6f02659a5e26848692d470a057b8e12a);
+            
+    
+            var marker_609ef16ac5c255814bb64e940696d005 = L.marker(
+                [28.1, 121.2],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_dbd0d2c953d1687dd407fb71c3d5a170 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3426087cb45a88f14b905a8e8a534448 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e13589471e6d67c7d2e614c1bfa3df73 = $(`<div id="html_e13589471e6d67c7d2e614c1bfa3df73" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/9     <br>      <b>災害種別：</b>     <span style="         color:orange;         font-weight:bold;     ">     台風・洪水     </span>     <br>      <b>国・地域：</b>     中国・日本・マーシャル諸島     <br>      <b>被災地：</b>     浙江省・温州市周辺     <br>      <b>緯度：</b>     28.1     <br>      <b>経度：</b>     121.2     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     Typhoon Dolphinによる大雨・洪水      </div>     </div>`)[0];
+                popup_3426087cb45a88f14b905a8e8a534448.setContent(html_e13589471e6d67c7d2e614c1bfa3df73);
+            
+        
+
+        marker_609ef16ac5c255814bb64e940696d005.bindPopup(popup_3426087cb45a88f14b905a8e8a534448)
+        ;
+
+        
+    
+    
+            marker_609ef16ac5c255814bb64e940696d005.bindTooltip(
+                `<div>
+                     2026/8/9 | 台風・洪水 | 浙江省・温州市周辺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_609ef16ac5c255814bb64e940696d005.setIcon(icon_dbd0d2c953d1687dd407fb71c3d5a170);
+            
+    
+            var marker_0200b02c793a494910cc9bb95538f966 = L.marker(
+                [4.72, -76.28],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_2e63b3108151e477cebf0bf1fe4e3aa4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5bc4c40774eb7a9bee189f07f57cc89 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_46b7ae72bea58d11ba0771ef4d4ec03c = $(`<div id="html_46b7ae72bea58d11ba0771ef4d4ec03c" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/10     <br>      <b>災害種別：</b>     <span style="         color:red;         font-weight:bold;     ">     地震     </span>     <br>      <b>国・地域：</b>     コロンビア     <br>      <b>被災地：</b>     Chocó州・San José del Palmar     <br>      <b>緯度：</b>     4.72     <br>      <b>経度：</b>     -76.28     <br>      <b>規模：</b>     M7.4     <br>      <b>概要：</b>     コロンビア西部で強い地震      </div>     </div>`)[0];
+                popup_e5bc4c40774eb7a9bee189f07f57cc89.setContent(html_46b7ae72bea58d11ba0771ef4d4ec03c);
+            
+        
+
+        marker_0200b02c793a494910cc9bb95538f966.bindPopup(popup_e5bc4c40774eb7a9bee189f07f57cc89)
+        ;
+
+        
+    
+    
+            marker_0200b02c793a494910cc9bb95538f966.bindTooltip(
+                `<div>
+                     2026/8/10 | 地震 | Chocó州・San José del Palmar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0200b02c793a494910cc9bb95538f966.setIcon(icon_2e63b3108151e477cebf0bf1fe4e3aa4);
+            
+    
+            var marker_7b5c0d058e3145a432d0108c37255887 = L.marker(
+                [35.61, 140.12],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_27e61142a1aa12d5fc3ff3f9156d0500 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "cloud",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0caecaa1e31b93cfbc81135a0d94e521 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_21ba920e195e502b5f21fc4baf62bd4b = $(`<div id="html_21ba920e195e502b5f21fc4baf62bd4b" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/13     <br>      <b>災害種別：</b>     <span style="         color:lightblue;         font-weight:bold;     ">     大雨・洪水     </span>     <br>      <b>国・地域：</b>     日本     <br>      <b>被災地：</b>     千葉県     <br>      <b>緯度：</b>     35.61     <br>      <b>経度：</b>     140.12     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     記録的豪雨による洪水・土砂災害      </div>     </div>`)[0];
+                popup_0caecaa1e31b93cfbc81135a0d94e521.setContent(html_21ba920e195e502b5f21fc4baf62bd4b);
+            
+        
+
+        marker_7b5c0d058e3145a432d0108c37255887.bindPopup(popup_0caecaa1e31b93cfbc81135a0d94e521)
+        ;
+
+        
+    
+    
+            marker_7b5c0d058e3145a432d0108c37255887.bindTooltip(
+                `<div>
+                     2026/8/13 | 大雨・洪水 | 千葉県
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7b5c0d058e3145a432d0108c37255887.setIcon(icon_27e61142a1aa12d5fc3ff3f9156d0500);
+            
+    
+            var marker_60cc845839b9d627600c185a46138270 = L.marker(
+                [-8.31, 121.35],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_ddd1741d45ced6d9317a3f29cf242fcd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b736c2a1b81fff9da0bcf1c38b871c1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f131b7631ca3246aa7ded27409eea5e0 = $(`<div id="html_f131b7631ca3246aa7ded27409eea5e0" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/14     <br>      <b>災害種別：</b>     <span style="         color:red;         font-weight:bold;     ">     地震     </span>     <br>      <b>国・地域：</b>     インドネシア     <br>      <b>被災地：</b>     フローレス島・エンデ周辺     <br>      <b>緯度：</b>     -8.31     <br>      <b>経度：</b>     121.35     <br>      <b>規模：</b>     M7.7     <br>      <b>概要：</b>     インドネシアで大規模地震、津波が発生      </div>     </div>`)[0];
+                popup_6b736c2a1b81fff9da0bcf1c38b871c1.setContent(html_f131b7631ca3246aa7ded27409eea5e0);
+            
+        
+
+        marker_60cc845839b9d627600c185a46138270.bindPopup(popup_6b736c2a1b81fff9da0bcf1c38b871c1)
+        ;
+
+        
+    
+    
+            marker_60cc845839b9d627600c185a46138270.bindTooltip(
+                `<div>
+                     2026/8/14 | 地震 | フローレス島・エンデ周辺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_60cc845839b9d627600c185a46138270.setIcon(icon_ddd1741d45ced6d9317a3f29cf242fcd);
+            
+    
+            var marker_521bd5048ccc2d7b8bcefa99d991b660 = L.marker(
+                [51.2, 71.4],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_0c8e7dead54218e62800f21dea3d3fb5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c494f2f709766bb1cbbf9d76d5abb1a5 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e04773fb7ef1c436c68a3506cf0df4fc = $(`<div id="html_e04773fb7ef1c436c68a3506cf0df4fc" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/14     <br>      <b>災害種別：</b>     <span style="         color:green;         font-weight:bold;     ">     森林火災     </span>     <br>      <b>国・地域：</b>     カザフスタン     <br>      <b>被災地：</b>     カザフスタン各地     <br>      <b>緯度：</b>     51.2     <br>      <b>経度：</b>     71.4     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     大規模森林・草原火災      </div>     </div>`)[0];
+                popup_c494f2f709766bb1cbbf9d76d5abb1a5.setContent(html_e04773fb7ef1c436c68a3506cf0df4fc);
+            
+        
+
+        marker_521bd5048ccc2d7b8bcefa99d991b660.bindPopup(popup_c494f2f709766bb1cbbf9d76d5abb1a5)
+        ;
+
+        
+    
+    
+            marker_521bd5048ccc2d7b8bcefa99d991b660.bindTooltip(
+                `<div>
+                     2026/8/14 | 森林火災 | カザフスタン各地
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_521bd5048ccc2d7b8bcefa99d991b660.setIcon(icon_0c8e7dead54218e62800f21dea3d3fb5);
+            
+    
+            var marker_7cf2917955e128e398a10363c98cc086 = L.marker(
+                [40.3, -3.7],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_756239104c221e1d180acef92bae97c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af3a06977a988a58584bba16bcd0547d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f4c830f79b05edffffc7feb616b69caa = $(`<div id="html_f4c830f79b05edffffc7feb616b69caa" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/17     <br>      <b>災害種別：</b>     <span style="         color:green;         font-weight:bold;     ">     森林火災     </span>     <br>      <b>国・地域：</b>     スペイン     <br>      <b>被災地：</b>     スペイン各地     <br>      <b>緯度：</b>     40.3     <br>      <b>経度：</b>     -3.7     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     大規模森林火災      </div>     </div>`)[0];
+                popup_af3a06977a988a58584bba16bcd0547d.setContent(html_f4c830f79b05edffffc7feb616b69caa);
+            
+        
+
+        marker_7cf2917955e128e398a10363c98cc086.bindPopup(popup_af3a06977a988a58584bba16bcd0547d)
+        ;
+
+        
+    
+    
+            marker_7cf2917955e128e398a10363c98cc086.bindTooltip(
+                `<div>
+                     2026/8/17 | 森林火災 | スペイン各地
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7cf2917955e128e398a10363c98cc086.setIcon(icon_756239104c221e1d180acef92bae97c0);
+            
+    
+            var marker_2158579a442a2e4fbc5fb5f10cff9bbc = L.marker(
+                [44.9, 21.1],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_170c5ff04d857c683e210e9cf7459629 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_804fc81d691a89fb67535cae60b64c23 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_08988e20485de7c385009db7042effa7 = $(`<div id="html_08988e20485de7c385009db7042effa7" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/20     <br>      <b>災害種別：</b>     <span style="         color:green;         font-weight:bold;     ">     森林火災     </span>     <br>      <b>国・地域：</b>     セルビア     <br>      <b>被災地：</b>     デルリブラツカ・ペシュチャラ周辺     <br>      <b>緯度：</b>     44.9     <br>      <b>経度：</b>     21.1     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     大規模森林火災、住民避難      </div>     </div>`)[0];
+                popup_804fc81d691a89fb67535cae60b64c23.setContent(html_08988e20485de7c385009db7042effa7);
+            
+        
+
+        marker_2158579a442a2e4fbc5fb5f10cff9bbc.bindPopup(popup_804fc81d691a89fb67535cae60b64c23)
+        ;
+
+        
+    
+    
+            marker_2158579a442a2e4fbc5fb5f10cff9bbc.bindTooltip(
+                `<div>
+                     2026/8/20 | 森林火災 | デルリブラツカ・ペシュチャラ周辺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2158579a442a2e4fbc5fb5f10cff9bbc.setIcon(icon_170c5ff04d857c683e210e9cf7459629);
+            
+    
+            var marker_868a28a725e1dc8e9e2629eb4af44c90 = L.marker(
+                [41.83, 142.83],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_0e5b645f707e9164514d2f35a48a0a44 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_45f88233a0d4dcc556f550ff56381e08 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f765e0ddbd63475bbc58d16eb99ac539 = $(`<div id="html_f765e0ddbd63475bbc58d16eb99ac539" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/23     <br>      <b>災害種別：</b>     <span style="         color:red;         font-weight:bold;     ">     地震     </span>     <br>      <b>国・地域：</b>     日本     <br>      <b>被災地：</b>     北海道南部     <br>      <b>緯度：</b>     41.83     <br>      <b>経度：</b>     142.83     <br>      <b>規模：</b>     M6.0     <br>      <b>概要：</b>     北海道南部で強い地震      </div>     </div>`)[0];
+                popup_45f88233a0d4dcc556f550ff56381e08.setContent(html_f765e0ddbd63475bbc58d16eb99ac539);
+            
+        
+
+        marker_868a28a725e1dc8e9e2629eb4af44c90.bindPopup(popup_45f88233a0d4dcc556f550ff56381e08)
+        ;
+
+        
+    
+    
+            marker_868a28a725e1dc8e9e2629eb4af44c90.bindTooltip(
+                `<div>
+                     2026/8/23 | 地震 | 北海道南部
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_868a28a725e1dc8e9e2629eb4af44c90.setIcon(icon_0e5b645f707e9164514d2f35a48a0a44);
+            
+    
+            var marker_ea071f8ce338fa92080a0944d3f9390c = L.marker(
+                [-15.4, 167.83],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_b5f60bcd96bd2b1d65b530ddaf92381d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_951799f50e8199cf07a3657e308fea92 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_2e77ecab18021f8b8e3a2125acc00e10 = $(`<div id="html_2e77ecab18021f8b8e3a2125acc00e10" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/25     <br>      <b>災害種別：</b>     <span style="         color:purple;         font-weight:bold;     ">     火山噴火     </span>     <br>      <b>国・地域：</b>     バヌアツ     <br>      <b>被災地：</b>     アンバエ島・アンバエ火山     <br>      <b>緯度：</b>     -15.4     <br>      <b>経度：</b>     167.83     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     アンバエ火山で大規模噴火、噴煙約15,000m      </div>     </div>`)[0];
+                popup_951799f50e8199cf07a3657e308fea92.setContent(html_2e77ecab18021f8b8e3a2125acc00e10);
+            
+        
+
+        marker_ea071f8ce338fa92080a0944d3f9390c.bindPopup(popup_951799f50e8199cf07a3657e308fea92)
+        ;
+
+        
+    
+    
+            marker_ea071f8ce338fa92080a0944d3f9390c.bindTooltip(
+                `<div>
+                     2026/8/25 | 火山噴火 | アンバエ島・アンバエ火山
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea071f8ce338fa92080a0944d3f9390c.setIcon(icon_b5f60bcd96bd2b1d65b530ddaf92381d);
+            
+    
+            var marker_e86b19539e24ec77801944c68957e1fc = L.marker(
+                [28.03, 85.19],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_318d5dceaa80ff3e8bbeab517d46e4f0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_803fdce01fa8ff639edf4ecd12540615 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_53e2cb787d790ad1e96f7e0ea249eae5 = $(`<div id="html_53e2cb787d790ad1e96f7e0ea249eae5" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/26     <br>      <b>災害種別：</b>     <span style="         color:blue;         font-weight:bold;     ">     洪水・土砂災害     </span>     <br>      <b>国・地域：</b>     ネパール・中国     <br>      <b>被災地：</b>     ネパール北部・チベット南部     <br>      <b>緯度：</b>     28.03     <br>      <b>経度：</b>     85.19     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     氷河・氷雪崩壊に伴う大規模洪水・土石流      </div>     </div>`)[0];
+                popup_803fdce01fa8ff639edf4ecd12540615.setContent(html_53e2cb787d790ad1e96f7e0ea249eae5);
+            
+        
+
+        marker_e86b19539e24ec77801944c68957e1fc.bindPopup(popup_803fdce01fa8ff639edf4ecd12540615)
+        ;
+
+        
+    
+    
+            marker_e86b19539e24ec77801944c68957e1fc.bindTooltip(
+                `<div>
+                     2026/8/26 | 洪水・土砂災害 | ネパール北部・チベット南部
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e86b19539e24ec77801944c68957e1fc.setIcon(icon_318d5dceaa80ff3e8bbeab517d46e4f0);
+            
+    
+            var marker_d509c532436b9b7b1e30390f59ba76c1 = L.marker(
+                [27.9, 127.2],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_90afce8ae80865493a02bf2d0408c476 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_31391b21cedf4eeeedd30332c5a1d0eb = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a0143bd4fa4adc3c8b25d4ee8df098f6 = $(`<div id="html_a0143bd4fa4adc3c8b25d4ee8df098f6" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/26     <br>      <b>災害種別：</b>     <span style="         color:orange;         font-weight:bold;     ">     台風・暴風雨     </span>     <br>      <b>国・地域：</b>     中国・日本     <br>      <b>被災地：</b>     沖縄・奄美・浙江省・福建省     <br>      <b>緯度：</b>     27.9     <br>      <b>経度：</b>     127.2     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     Typhoon Saudelによる暴風雨・大雨・洪水      </div>     </div>`)[0];
+                popup_31391b21cedf4eeeedd30332c5a1d0eb.setContent(html_a0143bd4fa4adc3c8b25d4ee8df098f6);
+            
+        
+
+        marker_d509c532436b9b7b1e30390f59ba76c1.bindPopup(popup_31391b21cedf4eeeedd30332c5a1d0eb)
+        ;
+
+        
+    
+    
+            marker_d509c532436b9b7b1e30390f59ba76c1.bindTooltip(
+                `<div>
+                     2026/8/26 | 台風・暴風雨 | 沖縄・奄美・浙江省・福建省
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d509c532436b9b7b1e30390f59ba76c1.setIcon(icon_90afce8ae80865493a02bf2d0408c476);
+            
+    
+            var marker_5d31a03a73159d503bd470d7c1fb5861 = L.marker(
+                [36.8, 136.9],
+                {
+}
+            ).addTo(map_6cce41061fc7979e2d7d6db608a06dbb);
+        
+    
+            var icon_7bf3f7cab96c726d353f5fcabdf38c78 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "cloud",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f50aa27ead117f25ae3a3081bf9aabb7 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_8e754cdaee73ea8af41d411ef2864d2d = $(`<div id="html_8e754cdaee73ea8af41d411ef2864d2d" style="width: 100.0%; height: 100.0%;">     <div style="         font-size:14px;         line-height:1.6;         width:350px;     ">      <b>発生日：</b>     2026/8/27     <br>      <b>災害種別：</b>     <span style="         color:lightblue;         font-weight:bold;     ">     大雨・洪水・土砂災害     </span>     <br>      <b>国・地域：</b>     日本     <br>      <b>被災地：</b>     石川県・富山県     <br>      <b>緯度：</b>     36.8     <br>      <b>経度：</b>     136.9     <br>      <b>規模：</b>     N/A     <br>      <b>概要：</b>     記録的豪雨による洪水・土砂災害      </div>     </div>`)[0];
+                popup_f50aa27ead117f25ae3a3081bf9aabb7.setContent(html_8e754cdaee73ea8af41d411ef2864d2d);
+            
+        
+
+        marker_5d31a03a73159d503bd470d7c1fb5861.bindPopup(popup_f50aa27ead117f25ae3a3081bf9aabb7)
+        ;
+
+        
+    
+    
+            marker_5d31a03a73159d503bd470d7c1fb5861.bindTooltip(
+                `<div>
+                     2026/8/27 | 大雨・洪水・土砂災害 | 石川県・富山県
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5d31a03a73159d503bd470d7c1fb5861.setIcon(icon_7bf3f7cab96c726d353f5fcabdf38c78);
+            
+</script>
+</html>
